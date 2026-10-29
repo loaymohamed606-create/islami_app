@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islami/core/utils/routes.dart';
 import 'package:islami/ui/screens/home/home_screen.dart';
-import 'core/utils/routes.dart';
-import 'core/utils/colors.dart';
-    
+import 'package:islami/ui/screens/onboarding_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,14 +10,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override  
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: Routes.homeroute,
-      routes: {
-        Routes.homeroute: (context) => const HomeScreen(),
-      },
       debugShowCheckedModeBanner: false,
+      initialRoute: Routes.onboardingRoute,
+      routes: {
+        Routes.onboardingRoute: (context) => const OnboardingScreen(),
+        Routes.homeRoute: (context) => const HomeScreen(),
+      },
     );
   }
 }
